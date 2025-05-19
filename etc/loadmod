@@ -1,0 +1,4 @@
+cd /usr/lib/modules/
+./load3516a -i -sensor ov4689 -osmem 50
+. /usr/etc/loadpublic
+cd /

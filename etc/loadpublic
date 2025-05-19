@@ -1,0 +1,59 @@
+
+#load wdt
+insmod wdt.ko nodeamon=1
+
+#load rt3070sta
+if [ -e rt3070sta.ko ];then
+		insmod rtutil3070sta.ko
+  	insmod rt3070sta.ko
+  	insmod rtnet3070sta.ko
+fi
+
+#load 8188eus
+if [ -e 8188eu.ko ];then
+	insmod 8188eu.ko
+fi
+if [ -e compat.ko ] && [ -e xm80211.ko ] && [ -e lynx_w2usb.ko ];then
+	insmod compat.ko
+	insmod xm80211.ko
+	insmod lynx_w2usb.ko
+fi
+if [ -e ath.ko ];then
+	insmod cfg80211.ko
+	insmod ath6kl_sdio.ko
+	insmod ath.ko
+fi
+if [ -e bcmdhd.ko ];then
+	himm 0x206f0004 0x1
+	himm 0x200f00ec 0x0
+	himm 0x201f0400 0x02
+	himm 0x201f0008 0x00
+	himm 0x201f0008 0x02
+	insmod hi_mci.ko
+	insmod cfg80211.ko
+	insmod bcmdhd.ko firmware_path=/usr/etc/Wireless/fw_bcm43438a0_apsta.bin nvram_path=/usr/etc/Wireless/nvram_ap6452.txt iface_name=eth2 dhd_oob_gpio_base=0x201c0000 dhd_oob_gpio_num=5 dhd_regon_gpio_base=0x201f0000 dhd_regon_gpio_num=1	
+fi
+#load mt7601Usta
+if [ -e mt7601Usta.ko ];then
+	insmod mt7601Usta.ko
+fi
+
+#load hirtc
+insmod hi_rtc.ko
+
+#load at88sc
+if [ -e cryp.ko ];then
+	insmod cryp.ko 
+	mknod /dev/cryp c 133 3
+fi
+if [ -e at88sc.ko ];then
+	insmod at88sc.ko 
+fi
+
+#load at24c
+insmod at24c.ko gpio_mux_type=3
+
+#load aw8733a
+if [ -e aw8733a.ko ];then
+	insmod aw8733a.ko
+fi	

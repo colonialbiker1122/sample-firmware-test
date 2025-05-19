@@ -1,0 +1,30 @@
+{
+   "Vendor" : "General",
+   "Hardware" : "HI3516D_83H40",
+   "CompatibleVersion" : 1,
+   "PackSize" : 7168,
+   "LogoArea" : {"Begin": "0x80770000", "End": "0x80780000"},
+   "Language" : [
+   		"Arabic",
+   		"Brazilian",
+   		"English",
+   		"French",
+   		"German",
+   		"Greek",
+   		"Hebrew",
+   		"Hungarian",
+   		"Italian",
+   		"Japanese",
+   		"Poland",
+   		"Portugal",
+   		"Romanian",
+   		"Russian",
+   		"SimpChinese",
+   		"Spanish",
+   		"Finnish",
+   		"Thai",
+   		"TradChinese",
+   		"Turkey",
+   		"Bulgarian"
+   ]
+}
