@@ -1,0 +1,15 @@
+sd:yes
+audio:yes
+wifi:yes
+3g:yes
+onvif:yes
+wifi_8188eu:no
+wifi_xm711:no
+wifi_ar6302:no
+wifi_ap6452:no
+wifi_mt7601:no
+xmjp:no
+usb:yes
+JuFeng:no
+wifinvr:no
+DDR_SIZE:1G

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+echo "run_loop <cmd>	<sleep second,default: 1>"
+
+if [ $# == 0 ] ; then
+	exit 1;
+fi
+
+count=0
+
+while [ $count -lt 1 ]
+do
+	if [ $# == 1 ] ; then
+		$1
+		sleep	1
+	else 
+		$1
+		sleep $2
+	fi
+done
